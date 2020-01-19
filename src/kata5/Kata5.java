@@ -3,6 +3,7 @@ package kata5;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.List;
 import static kata5.CreateNewTable.createNewTable;
 
 public class Kata5 {
@@ -13,7 +14,14 @@ public class Kata5 {
         SelectApp app = new SelectApp();
         app.selectAll();
         createNewTable();
-
+        String percorso= "C:\\Users\\milen\\OneDrive\\Desktop\\esami e oratiche ulpgc\\ingegneria software 2\\cose mie\\Kata5\\email.txt";
+        List<String> list = MailListReader.read(percorso);
+        InsertarDatosTabla idt= new InsertarDatosTabla();
+        
+        for (String string : list) {
+            idt.insert(string);
+        }
+        
     } 
     
     private static void connect() {
