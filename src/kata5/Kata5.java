@@ -3,6 +3,7 @@ package kata5;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import static kata5.CreateNewTable.createNewTable;
 
 public class Kata5 {
 
@@ -11,6 +12,7 @@ public class Kata5 {
         connect();
         SelectApp app = new SelectApp();
         app.selectAll();
+        createNewTable();
 
     } 
     
